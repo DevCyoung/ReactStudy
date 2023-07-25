@@ -1,19 +1,11 @@
-import { useMutation, gql } from '@apollo/client'
+import { useMutation } from '@apollo/client'
 import { useState } from 'react';
 
-//graph ql setting 을 위한 gql
+import DefaultUI, {BoardWriteUI2} from './BoardWrite.presenter';
+import { myGraphQLSetting } from './BoardWrite.queries';
+//컨트롤 + i 불들어오는거선택
 
-const myGraphQLSetting = gql`
-    mutation createBoard($writer: String, $title: String, $contents: String) {
-    createBoard(writer: $writer, title: $title, contents: $contents){
-      _id
-      number
-      message
-    }
-  }
-`
-
-export default function GraphqlMutation() {
+export default function BoardWrite(props) {
 
   const [writer, setWrite] = useState();
   const [title, setTitle] = useState();
@@ -46,14 +38,14 @@ export default function GraphqlMutation() {
     setContents(event.target.value);
   }
 
-  //한줄일 땐 괄호필요없음
   return (
     <div>
-      작성자 : <input type="text" onChange={onChangeWriter} />
-      내용 : <input type="text" onChange={onChangeContents} />
-      제목 : <input type="text" onChange={onChangeTitle} />
-      <button onClick={onClickSubmit}> GRAPHQL API 요청 하기 </button>
+      <BoardWriteUI2
+        aaa={onClickSubmit}
+        bbb={onChangeWriter}
+        ccc={onChangeContents}
+        ddd={onChangeTitle}
+      />
     </div>
-
   )
 }

@@ -1,22 +1,25 @@
 //import '../styles/globals.css'
-
+//
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider
 }
   from "@apollo/client"
-
-  
-
+import { AppProps } from "next/app"
 //_app.js 모든페이지 에서 하는 공통 설정을 여기서한다.
-export default function App({ Component, pageProps }) {
+// export default function App({ Component, pageProps }) {
+
+//   const client = new ApolloClient({
+//     uri: "http://practice.codebootcamp.co.kr/graphql",
+//     cache: new InMemoryCache // 컴퓨터에다가 백엔드에서 받아온 데이터 임시로 저장해놓기
+//   })
+
+export default function App({ Component }: AppProps) {
 
   const client = new ApolloClient({
     uri: "http://practice.codebootcamp.co.kr/graphql",
     cache: new InMemoryCache // 컴퓨터에다가 백엔드에서 받아온 데이터 임시로 저장해놓기
-
-
   })
 
   //ApolloProvider 제공자로 감싸기
@@ -32,11 +35,11 @@ export default function App({ Component, pageProps }) {
 
   return (
     <div>
-      <div> ==== 여기는 _app.js 커퍼넌트 입니다. ========== </div>
+      <div> ==== dd여기는 sdd_app.tsx 커퍼넌트 입니다. ========== </div>
       <ApolloProvider client={client}>
-        <Component {...pageProps} /> //지금보는 페이지 // apt.js //페이지도 하나의 컴퍼넌트
+        <Component /> //지금보는 페이지 // apt.js //페이지도 하나의 컴퍼넌트
       </ApolloProvider>
-      <div> ==== 여기는 _app.js 마지막 커퍼넌트 입니다. ========== </div>
+      <div> ==== 여기는 sdd_app.tsx 마지막 커퍼넌트 입니다. ========== </div>
     </div>
   )
 }
