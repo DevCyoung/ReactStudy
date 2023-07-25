@@ -17,8 +17,6 @@ export default function LibraryIconPage() {
         alert(event.currentTarget.id);
     }
 
-
-
     return (
         <div id="삭제할게시글ID" >
             <MyIcon onClick={onClickDelete}/>                   
