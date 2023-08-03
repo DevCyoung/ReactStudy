@@ -29,13 +29,14 @@ export default function App({ Component }: AppProps): JSX.Element {
 
   return (
     <div>
-      <div> ====여기는 _app.tsx 입니다. ========== </div>
-      <Apollo>
-        <Layout>
-          <Component />
-        </Layout>
-      </Apollo>
-      <div> ====여기는 _app.tsx 입니다. ========== </div>
+      <Component />
+      {/* <div> ====여기는 _app.tsx 입니다. ========== </div> */}
+      {/* <Apollo> */}
+      
+        {/* <Layout>          
+        </Layout> */}
+      {/* </Apollo> */}
+      {/* <div> ====여기는 _app.tsx 입니다. ========== </div> */}
     </div>
   )
 }
